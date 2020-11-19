@@ -1,0 +1,19 @@
+<h2>People</h2>
+<p id="notice"><%= notice %></p>
+<hr>
+
+  <div>
+    <% @people.each do |person| %>
+      <div>
+        <p><%= person.name %></p>
+        <p><%= person.age %></p>
+        <p><%= link_to 'Show', person %></p>
+        <p><%= link_to 'Edit', edit_person_path(person) %></p>
+        <p><%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    <% end %>
+  </div>
+
+<br>
+
+<%= link_to 'Create a New Person', new_person_path %>
